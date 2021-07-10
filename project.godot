@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "ThrowCast2D",
+"language": "GDScript",
+"path": "res://addons/ExtraNodesGD/Nodes/ThrowCast2D.gd"
+} ]
+_global_script_class_icons={
+"ThrowCast2D": ""
+}
+
+[application]
+
+config/name="ExtraNodesGD"
+run/main_scene="res://addons/ExtraNodesGD/Demo/ThrowCastTest2D.tscn"
+config/icon="res://addons/ExtraNodesGD/ExtraNodesGD.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/ExtraNodesGD/plugin.cfg" )

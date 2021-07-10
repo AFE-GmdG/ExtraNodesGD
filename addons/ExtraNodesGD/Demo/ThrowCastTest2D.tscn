@@ -1,0 +1,192 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/ExtraNodesGD/Demo/ThrowCastTest2D.gd" type="Script" id=1]
+[ext_resource path="res://addons/ExtraNodesGD/Demo/Materials/CanvasGrid.tres" type="Material" id=2]
+[ext_resource path="res://addons/ExtraNodesGD/Demo/Fonts/Hind-20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/ExtraNodesGD/Demo/Fonts/Consola-20.tres" type="DynamicFont" id=4]
+[ext_resource path="res://addons/ExtraNodesGD/Demo/Textures/Rock2D.png" type="Texture" id=5]
+[ext_resource path="res://addons/ExtraNodesGD/Nodes/ThrowCast2D.gd" type="Script" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.0
+
+[node name="ThrowCastTest2D" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 2 )
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MousePositionLabel" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 190.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mouse Position:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MousePositionText" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 32.0
+margin_right = 800.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 4 )
+text = "[  300 400 ]"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ThrowAngleLabel" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 58.0
+margin_right = 190.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 3 )
+text = "Throw Angle:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ThrowAngleText" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 65.0
+margin_right = 800.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 4 )
+text = "  0.0° ( 0.000) Sin:  0.000 Cos:  1.000"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ThrowSpeedLabel" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 91.0
+margin_right = 190.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 3 )
+text = "Throw Speed:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ThrowSpeedText" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 98.0
+margin_right = 800.0
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 4 )
+text = "100.0"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColliderLabel" type="Label" parent="."]
+margin_left = 25.0
+margin_top = 124.0
+margin_right = 190.0
+margin_bottom = 157.0
+custom_fonts/font = ExtResource( 3 )
+text = "Collider:"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColliderText" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 131.0
+margin_right = 800.0
+margin_bottom = 152.0
+custom_fonts/font = ExtResource( 4 )
+text = "(null)"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D (1)" type="StaticBody2D" parent="."]
+position = Vector2( 556, 485 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D (1)"]
+polygon = PoolVector2Array( 92.313, -63.563, 117.114, 27.612, -13.509, 79.075, -95.992, 54.353, -114.311, -20.557, -47.62, -72.562 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Rock" type="Sprite" parent="StaticBody2D (1)"]
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D (2)" type="StaticBody2D" parent="."]
+position = Vector2( 942, 549 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="StaticBody2D (2)"]
+polygon = PoolVector2Array( 92.313, -63.563, 117.114, 27.612, -13.509, 79.075, -95.992, 54.353, -114.311, -20.557, -47.62, -72.562 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Rock" type="Sprite" parent="StaticBody2D (2)"]
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cannon" type="StaticBody2D" parent="."]
+position = Vector2( 100, 400 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cannon"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Cannon"]
+color = Color( 0.372549, 0.333333, 0.333333, 1 )
+polygon = PoolVector2Array( 25, 25, -25, 25, -25, 0, -24.3179, -5.70197, -22.0789, -12.3196, -18.8521, -16.949, -14.2217, -21.159, -7.39488, -23.8864, -0.752159, -25.2279, 6.60709, -24.0476, 12.5599, -21.4681, 17.9173, -17.698, 22.5389, -11.7583, 24.3661, -6.38776, 25, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ThrowCast2D" type="Node2D" parent="Cannon"]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+enabled = true
+
+[node name="Line2D" type="Line2D" parent="Cannon"]
+points = PoolVector2Array( 0, 0, 200, 0 )
+width = 2.0
+default_color = Color( 0.968627, 0.243137, 0.14902, 1 )
+__meta__ = {
+"_edit_lock_": true
+}

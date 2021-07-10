@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://addons/ExtraNodesGD/Demo/Shaders/CanvasGrid.shader" type="Shader" id=1]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/backgroundColor = Color( 0.36, 0.66, 0.85, 1 )
+shader_param/mainGridColor = Color( 1, 1, 1, 0.8 )
+shader_param/subGridColor = Color( 1, 1, 1, 0.25 )
